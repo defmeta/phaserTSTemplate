@@ -22,10 +22,11 @@ export class IntroScene extends Phaser.Scene {
     }
 
     create() {
-        this.introTitle = this.add.text(
-            10, 10, 'Welcome to game...',
+        this.introTitle = this.add.text(10, 10, '',
             { fontFamily: 'Arial', color: '#ffffff', fontSize: '18px' }
         );
+
+        this.introTitle.text = 'Welcome to game... Click to proceed.'
 
         var particles = this.add.particles('red');
 
