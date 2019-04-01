@@ -1,5 +1,5 @@
 {
-  "name": "phasertests",
+  "name": "phaserTSTemplate",
   "version": "1.0.0",
   "description": "Multi scene phaser/typescript base project",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/defmeta/phaserTests.git"
+    "url": "git+https://github.com/defmeta/phaserTSTemplate.git"
   },
   "author": "Noah Aronsson-Brown",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/defmeta/phaserTests/issues"
+    "url": "https://github.com/defmeta/phaserTSTemplate/issues"
   },
-  "homepage": "https://github.com/defmeta/phaserTests#readme",
+  "homepage": "https://github.com/defmeta/phaserTSTemplate#readme",
   "devDependencies": {
     "live-server": "^1.2.1",
     "phaser": "^3.16.2",
