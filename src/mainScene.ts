@@ -25,12 +25,14 @@ export class MainScene extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.player = this.physics.add.image(this.stageWidth/2, this.stageHeight/2, 'player');
 
-        //  Set the world's physics bounds
+        //  Set the camera and physics bounds
+        this.cameras.main.setBounds(0, 0, this.stageWidth, this.stageHeight);
         this.physics.world.setBounds(0, 0, this.stageWidth, this.stageHeight);
 
         this.player.setCollideWorldBounds(true);
         this.player.setScale(0.5, 0.5);
 
+        this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     }
 
     update(time) {
