@@ -14,7 +14,7 @@ const config: GameConfig = {
       debug: false
     }
   },
-  backgroundColor: "#000000"
+  backgroundColor: "#330088"
 };
 export class PhaserTest extends Phaser.Game {
   constructor(config: GameConfig) {

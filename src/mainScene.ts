@@ -17,7 +17,7 @@ export class MainScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('player', 'assets/img/red.png');
+        this.load.image('player', 'assets/img/RS05.png');
     }
 
     create() {
@@ -25,13 +25,11 @@ export class MainScene extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.player = this.physics.add.image(this.stageWidth/2, this.stageHeight/2, 'player');
 
-        //  Set the camera and physics bounds
-        this.cameras.main.setBounds(0, 0, this.stageWidth, this.stageHeight);
+        //  Set the world's physics bounds
         this.physics.world.setBounds(0, 0, this.stageWidth, this.stageHeight);
 
         this.player.setCollideWorldBounds(true);
-
-        this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
+        this.player.setScale(0.5, 0.5);
 
     }
 

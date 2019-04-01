@@ -3,21 +3,30 @@ import "phaser";
 export class IntroScene extends Phaser.Scene {
 
     logo: Phaser.GameObjects.Sprite;
+    introTitle: Phaser.GameObjects.Text;
+    stageWidth: number;
+    stageHeight: number;
 
     constructor() {
         super({ key: 'IntroScene' });
     }
 
     init() {
-
+        this.stageWidth = 800;
+        this.stageHeight = 600;
     }
 
     preload() {
-        this.load.image('logo', 'assets/img/test.png');
+        this.load.image('logo', 'assets/img/Generic_logo.png');
         this.load.image('red', 'assets/img/red.png');
     }
 
-    create() { 
+    create() {
+        this.introTitle = this.add.text(
+            10, 10, 'Welcome to game...',
+            { fontFamily: 'Arial', color: '#ffffff', fontSize: '18px' }
+        );
+
         var particles = this.add.particles('red');
 
         var particleEmitterConfig: ParticleEmitterConfig = {
@@ -29,9 +38,9 @@ export class IntroScene extends Phaser.Scene {
 
         var emitter = particles.createEmitter(particleEmitterConfig);
 
-        this.logo = this.add.sprite(400, 200, 'logo');
+        this.logo = this.add.sprite(this.stageWidth/ 2,this.stageHeight / 2, 'logo');
 
-        emitter.setPosition(400, 200);
+        emitter.setPosition(this.stageWidth/ 2,this.stageHeight / 2);
 
         this.input.once('pointerdown', function (/*pointer*/) {
             this.scene.start( 'MainScene' );
